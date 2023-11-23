@@ -16,6 +16,10 @@ public enum Coin {
         this.amount = amount;
     }
 
+    public int getCoin() {
+        return amount;
+    }
+
     public static List<Integer> coinTypes(){
         List<Integer> types = new ArrayList<>();
         Arrays.stream(Coin.values())

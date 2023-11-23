@@ -1,5 +1,7 @@
 package vendingmachine.view;
 
+import vendingmachine.model.coin.Coin;
+
 import java.util.List;
 
 import static vendingmachine.view.constants.ErrorMessage.ERROR_TAG;
@@ -8,6 +10,8 @@ import static vendingmachine.view.constants.OutputMessage.ASK_PURCHASE_DRINK_TYP
 import static vendingmachine.view.constants.OutputMessage.ASK_TOTAL_MONEY_OF_VENDING_MACHINE;
 import static vendingmachine.view.constants.OutputMessage.ASK_USER_INPUT_MONEY;
 import static vendingmachine.view.constants.OutputMessage.SHOW_BALANCE;
+import static vendingmachine.view.constants.OutputMessage.SHOW_TOTAL_USER_BALANCE_START_FLAG;
+import static vendingmachine.view.constants.OutputMessage.SHOW_USER_BALANCE;
 import static vendingmachine.view.constants.OutputMessage.SHOW_VENDING_MACHINE_COINS;
 import static vendingmachine.view.constants.OutputMessage.SHOW_VENDING_MACHINE_HOLD_COIN_START_TAG;
 
@@ -36,6 +40,15 @@ public class OutputView {
 
     public static void showBalance(int balance) {
         print(String.format(SHOW_BALANCE, balance));
+    }
+
+    public static void showUserTotalBalance(int[] balance) {
+        print(SHOW_TOTAL_USER_BALANCE_START_FLAG);
+
+        print(String.format(SHOW_USER_BALANCE, Coin.COIN_500.getCoin(), balance[0]));
+        print(String.format(SHOW_USER_BALANCE, Coin.COIN_100.getCoin(), balance[1]));
+        print(String.format(SHOW_USER_BALANCE, Coin.COIN_50.getCoin(), balance[2]));
+        print(String.format(SHOW_USER_BALANCE, Coin.COIN_10.getCoin(), balance[3]));
     }
 
     public static void askPurchaseDrinkType() {

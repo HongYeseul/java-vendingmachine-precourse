@@ -17,6 +17,7 @@ import static vendingmachine.view.OutputView.askUserInputMoney;
 import static vendingmachine.view.OutputView.printVendingMachineCoins;
 import static vendingmachine.view.OutputView.println;
 import static vendingmachine.view.OutputView.showBalance;
+import static vendingmachine.view.OutputView.showUserTotalBalance;
 
 public class MainController {
 //    VendingMachineController vendingMachineController = new VendingMachineController();
@@ -29,6 +30,8 @@ public class MainController {
         UserMoney userMoney = askInputAmount();
 
         makePurchase(vendingMachine, userMoney);
+
+        showTotalBalance(vendingMachine, userMoney);
     }
 
     private Coins askTotalMoney(){
@@ -75,7 +78,6 @@ public class MainController {
             userMoney.purchaseDrink(vendingMachine.getPrice(purchaseDrinkType));
             println();
         }
-        showBalance(userMoney.getBalance());
     }
 
     private String askPurchase() {
@@ -87,5 +89,11 @@ public class MainController {
                 OutputView.errorMessage(exception.getMessage());
             }
         }
+    }
+
+    private void showTotalBalance(VendingMachine vendingMachine, UserMoney userMoney) {
+        showBalance(userMoney.getBalance());
+
+        showUserTotalBalance(vendingMachine.getBalance(userMoney.getBalance()));
     }
 }

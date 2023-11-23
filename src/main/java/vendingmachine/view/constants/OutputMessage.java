@@ -12,4 +12,7 @@ public class OutputMessage {
     public static final String SHOW_BALANCE = "투입 금액: %d원";
 
     public static final String ASK_PURCHASE_DRINK_TYPE = "구매할 상품명을 입력해 주세요.";
+
+    public static final String SHOW_TOTAL_USER_BALANCE_START_FLAG = "잔돈";
+    public static final String SHOW_USER_BALANCE = "%d원 - %d개";
 }
