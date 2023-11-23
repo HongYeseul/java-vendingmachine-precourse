@@ -26,8 +26,4 @@ public enum Coin {
                 .forEach(coin -> types.add(coin.amount));
         return types;
     }
-
-    public static Coin getCoinType(int amount){
-        return Coin.valueOf("COIN_" + amount);
-    }
 }
