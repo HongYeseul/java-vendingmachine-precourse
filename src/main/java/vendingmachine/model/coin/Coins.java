@@ -14,15 +14,15 @@ public class Coins {
 
     public List<Integer> coinsCount() {
         List<Integer> count = new ArrayList<>();
-        count.add(getCoinCount("COIN_500"));
-        count.add(getCoinCount("COIN_100"));
-        count.add(getCoinCount("COIN_50"));
-        count.add(getCoinCount("COIN_10"));
+        count.add(getCoinCount(Coin.COIN_500));
+        count.add(getCoinCount(Coin.COIN_100));
+        count.add(getCoinCount(Coin.COIN_50));
+        count.add(getCoinCount(Coin.COIN_10));
         return count;
     }
 
-    private Integer getCoinCount(String coinType) {
-        Integer coinCount = coins.get(Coin.valueOf(coinType));
+    private Integer getCoinCount(Coin coin) {
+        Integer coinCount = coins.get(coin);
         if (coinCount == null) {
             return 0;
         }

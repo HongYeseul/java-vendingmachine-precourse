@@ -22,10 +22,6 @@ public class VendingMachine {
         this.drinks = drinks;
     }
 
-    public List<Integer> showCoinBox() {
-        return moneyBox.coinsCount();
-    }
-
     public boolean hasMoneyMoreThenMinimumPrice(UserMoney userMoney) {
         return userMoney.getBalance() >= drinks.cheapestDrink();
     }
