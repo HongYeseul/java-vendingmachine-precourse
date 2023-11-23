@@ -76,7 +76,6 @@ public class MainController {
             showBalance(userMoney.getBalance());
             String purchaseDrinkType = askPurchase();
             userMoney.purchaseDrink(vendingMachine.getPrice(purchaseDrinkType));
-            println();
         }
     }
 
