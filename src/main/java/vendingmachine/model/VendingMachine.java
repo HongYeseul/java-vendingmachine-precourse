@@ -7,6 +7,11 @@ import vendingmachine.model.user.UserMoney;
 
 import java.util.List;
 
+import static vendingmachine.model.constants.Index.COIN_100_INDEX;
+import static vendingmachine.model.constants.Index.COIN_10_INDEX;
+import static vendingmachine.model.constants.Index.COIN_500_INDEX;
+import static vendingmachine.model.constants.Index.COIN_50_INDEX;
+
 public class VendingMachine {
     private Coins moneyBox;
     private Drinks drinks;
@@ -30,10 +35,10 @@ public class VendingMachine {
     }
 
     public int[] getBalance(int balance) {
-        balance = makeCoin(balance, Coin.COIN_500, 0);
-        balance = makeCoin(balance, Coin.COIN_100, 1);
-        balance = makeCoin(balance, Coin.COIN_50, 2);
-        makeCoin(balance, Coin.COIN_10, 3);
+        balance = makeCoin(balance, Coin.COIN_500, COIN_500_INDEX);
+        balance = makeCoin(balance, Coin.COIN_100, COIN_100_INDEX);
+        balance = makeCoin(balance, Coin.COIN_50, COIN_50_INDEX);
+        makeCoin(balance, Coin.COIN_10, COIN_10_INDEX);
         return moneyBox.getToGiveBalance();
     }
 

@@ -4,6 +4,10 @@ import vendingmachine.model.coin.Coin;
 
 import java.util.List;
 
+import static vendingmachine.model.constants.Index.COIN_100_INDEX;
+import static vendingmachine.model.constants.Index.COIN_10_INDEX;
+import static vendingmachine.model.constants.Index.COIN_500_INDEX;
+import static vendingmachine.model.constants.Index.COIN_50_INDEX;
 import static vendingmachine.view.constants.ErrorMessage.ERROR_TAG;
 import static vendingmachine.view.constants.OutputMessage.ASK_DRINKS;
 import static vendingmachine.view.constants.OutputMessage.ASK_PURCHASE_DRINK_TYPE;
@@ -45,10 +49,16 @@ public class OutputView {
     public static void showUserTotalBalance(int[] balance) {
         print(SHOW_TOTAL_USER_BALANCE_START_FLAG);
 
-        print(String.format(SHOW_USER_BALANCE, Coin.COIN_500.getCoin(), balance[0]));
-        print(String.format(SHOW_USER_BALANCE, Coin.COIN_100.getCoin(), balance[1]));
-        print(String.format(SHOW_USER_BALANCE, Coin.COIN_50.getCoin(), balance[2]));
-        print(String.format(SHOW_USER_BALANCE, Coin.COIN_10.getCoin(), balance[3]));
+        showDetailOfBalance(Coin.COIN_500, balance, COIN_500_INDEX);
+        showDetailOfBalance(Coin.COIN_100, balance, COIN_100_INDEX);
+        showDetailOfBalance(Coin.COIN_50, balance, COIN_50_INDEX);
+        showDetailOfBalance(Coin.COIN_10, balance, COIN_10_INDEX);
+    }
+
+    private static void showDetailOfBalance(Coin coin, int[] balance, int index) {
+        if (balance[index] > 0) {
+            print(String.format(SHOW_USER_BALANCE, coin.getCoin(), balance[index]));
+        }
     }
 
     public static void askPurchaseDrinkType() {
