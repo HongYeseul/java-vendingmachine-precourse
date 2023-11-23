@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Coins {
-    private HashMap<Coin, Integer> coins;
+    private final HashMap<Coin, Integer> coins;
     int[] toGiveBalance = {0, 0, 0, 0};
 
     public Coins(HashMap<Coin, Integer> coins) {
