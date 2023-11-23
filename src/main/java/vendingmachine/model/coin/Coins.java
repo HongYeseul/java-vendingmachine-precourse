@@ -32,7 +32,7 @@ public class Coins {
     public boolean isGiveBalance(int balance, Coin coin) {
         if(coins.get(coin) == null)
             return false;
-        return coins.get(coin) > 0 && ((balance - coin.getCoin()) > 0);
+        return coins.get(coin) > 0 && ((balance - coin.getCoin()) >= 0);
     }
 
     public int makeCoinBalance(int balance, Coin coin, int index) {
